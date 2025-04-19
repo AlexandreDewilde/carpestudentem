@@ -23,13 +23,13 @@
                 </label>
                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                     <li><a href="https://agenda.carpestudentem.be/">Agenda de l'animation</a></li>
-                    <li><a href="#">Demande de couverture</a></li>
-                    <li><a href="#">Demande de location</a></li>
+                    <li><a href="/couverture">Demande de couverture</a></li>
+                    <li><a href="/location">Demande de location</a></li>
                     <li><a href="/louvainpero">Louvainpero</a></li>
                     <li><a href="https://agenda.carpestudentem.be/create-qr-code">QR code perso</a></li>
                 </ul>
             </div>
-            <a class="btn btn-ghost normal-case text-xl">
+            <a class="btn btn-ghost normal-case text-xl" href="/">
                 <img src="https://www.carpestudentem.be/wp-content/uploads/2023/09/bubulle.png" alt="Carpe Studentem Logo" class="w-10 h-10 mr-2">
                 Carpe Studentem
             </a>
@@ -37,8 +37,8 @@
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <li><a href="https://agenda.carpestudentem.be/">Agenda de l'animation</a></li>
-                <li><a href="#">Demande de couverture</a></li>
-                <li><a href="#">Demande de location</a></li>
+                <li><a href="/couverture">Demande de couverture</a></li>
+                <li><a href="/location">Demande de location</a></li>
                 <li><a href="/louvainpero">Louvainpero</a></li>
                 <li><a href="https://agenda.carpestudentem.be/create-qr-code">QR code perso</a></li>
             </ul>
@@ -48,5 +48,47 @@
     </div>
     {% block content %}
     {% endblock %}
+    <!-- Footer -->
+    <footer class="footer p-10 bg-base-300 text-base-content flex flex-col md:flex-row md:justify-between">
+        <div>
+            <img src="https://www.carpestudentem.be/wp-content/uploads/2023/09/bubulle.png" alt="Carpe Studentem Logo" class="w-16 h-16">
+            <p>Carpe Studentem<br>Depuis 2000 et KAP depuis 2001</p>
+        </div>
+        <div>
+            <span class="footer-title">Contacts</span>
+            <p>Email: carpestudentem@gmail.com</p>
+            <p>Addresse: Rue de l'Hocaille 12, 1348 Louvain-la-Neuve</p>
+        </div>
+        <div>
+            <span class="footer-title">Socials</span>
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://www.facebook.com/CarpeStudentem" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/CarpeStudentem" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://twitter.com/CarpeStudentem" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+        </div>
+        <div>
+            <span class="footer-title">Soutiens</span>
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://www.organe.be/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://www.carpestudentem.be/wp-content/uploads/2023/11/LOGO-ORGANE-2016-1080x1080.png" alt="Organe Logo" class="w-12 h-12">
+                </a>
+                <a href="https://kapuclouvain.be/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://www.carpestudentem.be/wp-content/uploads/2023/11/logo-kaps-1-300x258-4.png" alt="KAP Logo" class="w-12 h-12">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <div class="text-center py-4 bg-base-300 text-base-content">
+        <p>&copy; 2000-2025 Carpe Studentem. All rights reserved.</p>
+    </div>
 </body>
+{% block script %}
+{% endblock %}
 </html>
