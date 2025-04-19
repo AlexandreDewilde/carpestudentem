@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <div
+        class="hero min-h-screen"
+        style="background-image: url(https://www.carpestudentem.be/wp-content/uploads/2025/03/CarpeQ2_2025-1-scaled.jpg);"
+    >
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-neutral-content text-center">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Carpe Studentem</h1>
+                <p class="py-6"></p>
+                <a href="https://agenda.carpestudentem.be/" class="btn btn-primary">Voir l'agenda</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Description Section -->
+    <div class="py-12 bg-base-100 text-base-content">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold">À propos de Carpe Studentem</h2>
+            <p class="py-6">
+                Le Carpe Studentem est un kot-à-projet fondé en 2001, mettant en avant l'événementiel à Louvain-la-Neuve à travers un agenda en ligne et un agenda papier publié toutes les 2 semaines. De plus, le Carpe réalise des couvertures vidéos (reels/tiktok/aftermovies) pour les événements néo-Louvainistes. Le Carpe organise un GRAND apéro urbain au Q2 lors de la dernière semaine de guindaille!
+            </p>
+        </div>
+    </div>
+
+    <!-- Details Section -->
+    <div class="py-12 bg-base-200 text-base-content">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-8">Nos projets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card bg-base-100 shadow-md">
+                    <figure class="px-10 pt-10">
+                        <i class="fa-solid fa-camera text-6xl"></i>
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title">Couverture</h3>
+                        <p>
+                            Nous réalisons des couvertures vidéos des événements de Louvain-la-Neuve, incluant des formats verticaux pour Instagram et TikTok, ainsi que des formats horizontaux pour YouTube, tels que le fameux aftermovie des 24h.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card bg-base-100 shadow-md">
+                    <figure class="px-10 pt-10">
+                        <i class="fa-solid fa-calendar-days text-6xl"></i>
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title">Agenda</h3>
+                        <p>
+                            Un agenda où les différentes associations de Louvain-la-Neuve peuvent ajouter leurs événements. Ensuite, le Carpe s'occupe de faire la promotion dans la ville et sur les réseaux sociaux.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card bg-base-100 shadow-md">
+                    <figure class="px-10 pt-10">
+                        <i class="fa-solid fa-camera text-6xl"></i>
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title">Locations</h3>
+                        <p>
+                            Nous proposons la location de matériel audiovisuel à bas prix, incluant des caméras, micros, trépieds, stabilisateurs, et bien plus encore. Idéal pour les étudiants et associations souhaitant capturer leurs événements avec du matériel de qualité sans se ruiner.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

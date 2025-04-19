@@ -1,0 +1,17 @@
+{
+  "name": "carpestudentem",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Carpestudentem",
+  "scripts": {
+    "watch:css": "npx @tailwindcss/cli -i ./static/css/input.css -o ./static/css/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.4",
+    "tailwindcss": "^4.1.4"
+  },
+  "devDependencies": {
+    "daisyui": "^5.0.27"
+  }
+}

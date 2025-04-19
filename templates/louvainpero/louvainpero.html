@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero min-h-screen"
+    style="background-image: url(https://www.carpestudentem.be/wp-content/uploads/2024/03/louvainpero1.jpg);"
+>
+    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Les Louvainpero 2025 sont dans...</h1>
+            <div class="flex gap-5 my-5">
+            <div>
+              <span class="countdown font-mono text-4xl"><span style="--value:99;" id="days-countdown"></span></span>
+              jours
+            </div>
+            <div>
+              <span class="countdown font-mono text-4xl"><span style="--value:0;" id="hours-countdown"></span></span>
+              heures
+            </div>
+            <div>
+              <span class="countdown font-mono text-4xl"><span style="--value:0;" id="min-countdown"></span></span>
+              minutes
+            </div>
+            <div>
+              <span class="countdown font-mono text-4xl"><span style="--value:50" id="sec-countdown"></span></span>
+              secondes
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<div class="container mx-auto px-4 py-8">
+
+
+    <section>
+        <h2 class="text-2xl font-semibold mb-4">Sponsors</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <img src="https://via.placeholder.com/150" alt="Sponsor 1" class="w-full h-auto object-contain">
+            <img src="https://via.placeholder.com/150" alt="Sponsor 2" class="w-full h-auto object-contain">
+            <img src="https://via.placeholder.com/150" alt="Sponsor 3" class="w-full h-auto object-contain">
+            <img src="https://via.placeholder.com/150" alt="Sponsor 4" class="w-full h-auto object-contain">
+        </div>
+    </section>
+</div>
+{% endblock %}

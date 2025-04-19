@@ -1,0 +1,8 @@
+.vscode
+db.sqlite3
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+node_modules/
