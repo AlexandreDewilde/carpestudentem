@@ -1,4 +1,4 @@
-.vscode
+.vscode/
 db.sqlite3
 __pycache__/
 *.pyc
@@ -6,3 +6,4 @@ __pycache__/
 *.pyd
 *.db
 node_modules/
+.venv/
