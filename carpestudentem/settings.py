@@ -38,7 +38,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "carpestudentem",
+    "louvainpero",
+    "couverture",
+    "location",
+    "crispy_forms",
+    "crispy_daisyui",
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'daisyui'
+CRISPY_TEMPLATE_PACK = 'daisyui'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

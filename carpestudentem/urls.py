@@ -26,4 +26,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
     path("louvainpero/", include("louvainpero.urls")),
+    path("couverture/", include("couverture.urls")),
+    path("location/", include("location.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
