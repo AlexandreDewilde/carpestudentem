@@ -29,6 +29,7 @@ urlpatterns = (
         path("louvainpero/", include("louvainpero.urls")),
         path("couverture/", include("couverture.urls")),
         path("location/", include("location.urls")),
+        path("team/", include("teams.urls")),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

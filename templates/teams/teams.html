@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="mx-auto container relative">
+    <div class="divider text-xl font-semibold">La team</div>
+    {% if latest_team %}
+    <div class="members">
+        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 mx-20 mb-10">
+        {% for member in latest_team.members.all %}
+            <div>
+                <div class="avatar">
+                    <div class="w-40 rounded-full">
+                        {% if member.picture %}
+                        <img src="{{ member.picture.url }}" alt="{{ member.first_name }}'s avatar" width="200">
+                        {% else %}
+                        <img src="/static/bubulle.png" alt="Default avatar" width="200">
+                        {% endif %}
+                    </div>
+                </div>
+                <p><strong>{{ member.first_name }} {{ member.last_name }}</strong></p>
+                <p>Surnom: {{ member.nickname|default:"N/A" }}</p>
+                <p>Role: {{ member.role }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    <p>No teams available.</p>
+    {% endif %}
+</section>
+{% endblock %}
