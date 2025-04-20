@@ -22,25 +22,21 @@
                     </svg>
                 </label>
                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a href="https://agenda.carpestudentem.be/">Agenda de l'animation</a></li>
-                    <li><a href="/couverture">Demande de couverture</a></li>
-                    <li><a href="/location">Demande de location</a></li>
-                    <li><a href="/louvainpero">Louvainpero</a></li>
-                    <li><a href="https://agenda.carpestudentem.be/create-qr-code">QR code perso</a></li>
+                    {% for button in navbar_buttons %}
+                        <li><a href="{{ button.link }}">{{ button.text }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
             <a class="btn btn-ghost normal-case text-xl" href="/">
-                <img src="https://www.carpestudentem.be/wp-content/uploads/2023/09/bubulle.png" alt="Carpe Studentem Logo" class="w-10 h-10 mr-2">
+                <img src="/static/bubulle.png" alt="Carpe Studentem Logo" class="w-10 h-10 mr-2">
                 Carpe Studentem
             </a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
-                <li><a href="https://agenda.carpestudentem.be/">Agenda de l'animation</a></li>
-                <li><a href="/couverture">Demande de couverture</a></li>
-                <li><a href="/location">Demande de location</a></li>
-                <li><a href="/louvainpero">Louvainpero</a></li>
-                <li><a href="https://agenda.carpestudentem.be/create-qr-code">QR code perso</a></li>
+                {% for button in navbar_buttons %}
+                    <li><a href="{{ button.link }}">{{ button.text }}</a></li>
+                {% endfor %}
             </ul>
         </div>
         <div class="navbar-end">
@@ -67,9 +63,6 @@
                 </a>
                 <a href="https://www.instagram.com/CarpeStudentem" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram fa-2x"></i>
-                </a>
-                <a href="https://twitter.com/CarpeStudentem" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter fa-2x"></i>
                 </a>
             </div>
         </div>

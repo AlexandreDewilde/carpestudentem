@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
+{% load get_item %}
 {% block content %}
 <section class="hero min-h-screen"
-    style="background-image: url(https://www.carpestudentem.be/wp-content/uploads/2024/03/louvainpero1.jpg);"
+    style="background-image: url(/uploads/{{ content_images|get_item:"louvainpero_hero_image" }});"
 >
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Le Louvainpero 2025 est dans...</h1>
+            <h1 class="mb-5 text-5xl font-bold">{{ content|get_item:"louvainpero_hero_title" }}</h1>
             <p class="mb-5 text-xl">
-              Le Louvainpero 2025 aura lieu le 8 mai sur la place de l'universite
+              {{ content|get_item:"louvainpero_hero_description" }}
             </p>
             <div class="flex gap-5 my-5">
             <div>
@@ -36,12 +37,9 @@
   <section>
     <h2 class="text-4xl font-bold text-center mb-4">Nos Partenaires</h2>
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6 items-center">
-      <img src="https://www.carpestudentem.be/wp-content/uploads/2025/03/Logo_Loterie_Horizontal_SAFEZONE_BASELINE_FR_RGB-1920x797.png" alt="Sponsor 1" class="w-full h-auto object-contain" style="max-height: 200px;">
-      <img src="https://www.carpestudentem.be/wp-content/uploads/2025/04/8c1dada90e7da77c2d569600b8858f74-edited.png" alt="Sponsor 2" class="w-full h-auto object-contain" style="max-height: 200px;">
-      <img src="https://www.carpestudentem.be/wp-content/uploads/2025/04/logo.spar_-1-741x1080.jpg" alt="Sponsor 3" class="w-full h-auto object-contain" style="max-height: 200px;">
-      <img src="https://www.carpestudentem.be/wp-content/uploads/2025/04/printbox-logo.png" alt="Sponsor 4" class="w-full h-auto object-contain" style="max-height: 200px;">
-      <img src="https://www.carpestudentem.be/wp-content/uploads/2025/04/7ca30737-0c01-4510-a2f2-ef48cf5c784b.jpg" alt="Sponsor 5" class="w-full h-auto object-contain" style="max-height: 200px;">
-      <img src="https://www.carpestudentem.be/wp-content/uploads/2025/04/Musee_logo_V4.02_VECTO_CMYK-1-1080x1080.png" alt="Sponsor 6" class="w-full h-auto object-contain" style="max-height: 200px;">
+      {% for sponsor in sponsors %}
+        <img src="/uploads/{{sponsor.logo}}" alt="Sponsor {{sponsor.name}}" class="w-full h-auto object-contain" style="max-height: 200px;">
+      {% endfor %}
     </div>
   </section>
 </div>
@@ -50,33 +48,17 @@
   <section>
     <h2 class="text-4xl font-bold text-center mb-8">Précédentes Éditions</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 my-12">
+      {% for edition in previous_editions %}
       <div class="card bg-base-100 shadow-xl">
         <figure>
-          <img src="https://www.carpestudentem.be/wp-content/uploads/2025/04/Affiches-avec-logo.pdf.png" alt="Louvainpero 2024" class="w-full h-auto object-cover">
+          <img src="/uploads/{{ edition.poster }}" alt="Louvainpero 2024" class="w-full h-auto object-cover">
         </figure>
         <div class="card-body">
-          <h3 class="card-title text-xl font-bold">Louvainpero 2024</h3>
-          <p>Une édition mémorable avec des moments inoubliables.</p>
+          <h3 class="card-title text-xl font-bold">{{ edition.name }}</h3>
+          <p>{{ edition.description }}</p>
         </div>
       </div>
-      <div class="card bg-base-100 shadow-xl">
-        <figure>
-          <img src="https://www.carpestudentem.be/wp-content/uploads/2025/04/Affiches-avec-logo.pdf.png" alt="Louvainpero 2023" class="w-full h-auto object-cover">
-        </figure>
-        <div class="card-body">
-          <h3 class="card-title text-xl font-bold">Louvainpero 2023</h3>
-          <p>Une ambiance festive et des souvenirs gravés à jamais.</p>
-        </div>
-      </div>
-      <div class="card bg-base-100 shadow-xl">
-        <figure>
-          <img src="https://www.carpestudentem.be/wp-content/uploads/2025/04/Affiches-avec-logo.pdf.png" alt="Louvainpero 2022" class="w-full h-auto object-cover">
-        </figure>
-        <div class="card-body">
-          <h3 class="card-title text-xl font-bold">Louvainpero 2022</h3>
-          <p>Une célébration qui a marqué les esprits.</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </section>
 </div>
@@ -84,7 +66,7 @@
 
 {% block script %}
 <script>
-  const startDateString = "2025-06-31";
+  const startDateString = "{{ last_edition.event_date|date:"Y-m-d" }}";
   const startDate = new Date(startDateString + 'T20:00:00+02:00');
 
   function updateCountdown() {

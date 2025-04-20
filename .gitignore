@@ -8,3 +8,6 @@ __pycache__/
 node_modules/
 .venv/
 static/css/output.css
+posters/
+logos/
+content_images/
