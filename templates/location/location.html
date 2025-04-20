@@ -17,3 +17,15 @@
 </div>
 
 {% endblock %}
+
+{% block script %}
+<script>
+  const locationStart = document.getElementById("id_location_start");
+  const locationEnd = document.getElementById("id_location_end");
+
+  locationStart.type = "datetime-local";
+  locationEnd.type = "datetime-local";
+  locationStart.value = new Date().toISOString().slice(0, 16);
+  locationEnd.value = new Date(new Date().getTime() + 60 * 60 * 1000).toISOString().slice(0, 16);
+</script>
+{% endblock %}

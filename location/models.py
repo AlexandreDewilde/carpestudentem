@@ -1,19 +1,21 @@
 from django.db import models
 
 class Location(models.Model):
-    first_name = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    location_start = models.DateTimeField()
-    location_end = models.DateTimeField()
-    phone_number = models.CharField(max_length=15, blank=True, null=True)
-    association = models.TextField(blank=True, null=True)
+    first_name = models.CharField("Prénom", max_length=100)
+    name = models.CharField("Nom", max_length=100)
+    email = models.EmailField("Email")
+    location_start = models.DateTimeField("Début de location")
+    location_end = models.DateTimeField("Fin de location")
+    phone_number = models.CharField("Numéro de téléphone", max_length=15, blank=True, null=True)
+    association = models.TextField("Association (ex: Carpe, CI, ...)", blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} ({self.first_name})"
 
 class Material(models.Model):
     name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to='materials/', blank=True, null=True)
 
     def __str__(self):
         return self.name
