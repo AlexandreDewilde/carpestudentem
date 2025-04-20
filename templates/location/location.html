@@ -2,8 +2,25 @@
 {% load daisyui_filters %}
 
 {% block content %}
+<div class="py-8">
+  <div class="divider text-xl font-semibold">Matériels Disponibles</div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 mx-20">
+    {% for material in materials %}
+    <div class="card bg-base-100 shadow-md">
+      <div class="card-body">
+        <img src="/uploads/{{ material.image }}" alt="{{ material.name }}" class="w-full h-48 object-cover rounded-t-lg">
+        <h2 class="card-title mt-4">{{ material.name }}</h2>
+        <p>{{ material.description }}</p>
+        <div class="card-actions justify-end">
+          {% comment %} <a href="{{ material.get_absolute_url }}" class="btn btn-secondary">Voir plus</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 <div class="mx-auto container relative">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-800 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl -z-10"></div>
+  <div class="divider text-xl font-semibold">Faire une location</div>
     <div class="mx-auto card bg-base-100 shadow-xl p-8 my-12">
       <h1 class="text-4xl font-semibold text-center mb-4">Faire une demande de location</h1>
         <form method="post">
@@ -16,6 +33,7 @@
     </div>
 </div>
 
+
 {% endblock %}
 
 {% block script %}
@@ -27,5 +45,6 @@
   locationEnd.type = "datetime-local";
   locationStart.value = new Date().toISOString().slice(0, 16);
   locationEnd.value = new Date(new Date().getTime() + 60 * 60 * 1000).toISOString().slice(0, 16);
+
 </script>
 {% endblock %}

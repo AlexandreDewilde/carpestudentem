@@ -5,7 +5,7 @@ class LocationForm(forms.ModelForm):
     materials = forms.ModelMultipleChoiceField(
         queryset=Material.objects.all(),
         widget=forms.CheckboxSelectMultiple,
-        required=False
+        required=True
     )
 
     class Meta:
