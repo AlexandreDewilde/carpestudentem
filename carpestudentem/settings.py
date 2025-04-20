@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     "crispy_daisyui",
 ]
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = 'daisyui'
-CRISPY_TEMPLATE_PACK = 'daisyui'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "daisyui"
+CRISPY_TEMPLATE_PACK = "daisyui"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -134,6 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+MEDIA_URL = "uploads/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

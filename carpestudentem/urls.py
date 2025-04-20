@@ -22,10 +22,14 @@ from django.urls import include, path
 
 from carpestudentem import views
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", views.index, name="index"),
-    path("louvainpero/", include("louvainpero.urls")),
-    path("couverture/", include("couverture.urls")),
-    path("location/", include("location.urls")),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns = (
+    [
+        path("admin/", admin.site.urls),
+        path("", views.index, name="index"),
+        path("louvainpero/", include("louvainpero.urls")),
+        path("couverture/", include("couverture.urls")),
+        path("location/", include("location.urls")),
+    ]
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)
